@@ -10,6 +10,28 @@ const dayMap = {
     sat: 'Samstag',
     sun: 'Sonntag'
 };
+let global_volume = 0
+
+setLoudness(0.25)
+
+let muted_volume = global_volume
+
+function setLoudness(value){
+    global_volume = value
+    document.getElementById("stream").volume = global_volume;
+}
+
+function toggleMute() {
+    if (global_volume > 0) {
+        muted_volume = global_volume
+        setLoudness(0)
+        document.getElementById("mute").classList.replace("bi-volume-up", "bi-volume-mute")
+    } else {
+        setLoudness(muted_volume)
+        document.getElementById("mute").classList.replace("bi-volume-mute", "bi-volume-up")
+    }
+    document.getElementById("loudness").value = global_volume * 100
+}
 
 async function fetchCover(artist, title) {
     if (!artist || artist.includes("Lade") || artist.includes("Werbepause")) return stationLogo;
@@ -21,6 +43,15 @@ async function fetchCover(artist, title) {
     } catch { return stationLogo; }
 }
 
+document.getElementById('loudness')
+    .addEventListener('input', e => {
+        let value = e.target.value / 100;
+        value = Math.pow(value, 2);
+        setLoudness(value)
+    });
+
+document.getElementById('mute')
+    .addEventListener('click', toggleMute)
 async function updateData() {
     var cover;
     try {

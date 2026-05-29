@@ -288,3 +288,17 @@ footer img {
     color: #eee;
     display: block;
 }
+
+#loudness {
+    accent-color: var(--accent);
+    width: 300px;
+    max-width: 80%;
+}
+
+#loudness:hover {
+    cursor: pointer;
+}
+
+#mute:hover {
+    cursor: pointer;
+}
