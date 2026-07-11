@@ -19,16 +19,20 @@ let muted_volume = global_volume
 function setLoudness(value){
     global_volume = value
     document.getElementById("stream").volume = global_volume;
+
+    if (value == 0) {
+        document.getElementById("mute").classList.replace("bi-volume-up", "bi-volume-mute")
+    } else {
+        document.getElementById("mute").classList.replace("bi-volume-mute", "bi-volume-up")
+    }
 }
 
 function toggleMute() {
     if (global_volume > 0) {
         muted_volume = global_volume
         setLoudness(0)
-        document.getElementById("mute").classList.replace("bi-volume-up", "bi-volume-mute")
     } else {
         setLoudness(muted_volume)
-        document.getElementById("mute").classList.replace("bi-volume-mute", "bi-volume-up")
     }
     document.getElementById("loudness").value = global_volume * 100
 }
