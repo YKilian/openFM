@@ -20,7 +20,7 @@ function setLoudness(value){
     global_volume = value
     document.getElementById("stream").volume = global_volume;
 
-    if (value == 0) {
+    if (value === 0) {
         document.getElementById("mute").classList.replace("bi-volume-up", "bi-volume-mute")
     } else {
         document.getElementById("mute").classList.replace("bi-volume-mute", "bi-volume-up")
