@@ -27,6 +27,14 @@ body {
     z-index: -1;
 }
 
+#play-icon{
+    transform: translate(3px, 0);
+}
+
+#mute{
+    font-size: 25px;
+}
+
 .main-content {
     flex: 1; width: 100%; max-width: 1100px;
     margin: 0 auto; padding: 40px 20px;
@@ -166,15 +174,8 @@ body {
     object-fit: cover;
 }
 
-footer {
-    padding: 25px;
-    text-align: center;
-    background-color: var(--accent);
-    color: #000;
-    font-weight: bold;
-}
-footer img {
-    height: 35px;
+#footer img {
+    height: 55px;
     margin-top: 10px;
 }
 
@@ -185,6 +186,7 @@ footer img {
     color: var(--accent);
     font-weight: 800;
     margin-bottom: 15px;
+    text-shadow: 2px 2px 9px black;
 }
 .fw-black {
     font-weight: 900;

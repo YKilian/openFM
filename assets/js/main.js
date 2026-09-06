@@ -238,10 +238,11 @@ ctrl.addEventListener('click', () => {
     if (audio.paused) {
         audio.src = `https://stream.laut.fm/${STATION}`;
         audio.play();
+        document.getElementById('play-icon').style.transform = 'translate(0, 0)';
         document.getElementById('play-icon').innerHTML = '<i class="bi bi-pause-fill"></i>';
     } else {
         audio.pause();
-        audio.src = '';
+        document.getElementById('play-icon').style.transform = 'translate(3px, 0)';
         document.getElementById('play-icon').innerHTML = '<i class="bi bi-play-fill"></i>';
     }
 });

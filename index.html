@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lade...</title>
-    <link id="dynamic-favicon" rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link id="dynamic-favicon" rel="icon" type="image/png" href="assets/img/logo.svg">
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -53,9 +53,9 @@
         </div>
     </div>
 
-    <div class="glass-wrapper">
+    <div class="glass-wrapper mb-3">
         <div class="row g-5">
-            <div class="col-lg-6 text-center border-end border-white border-opacity-10">
+            <div class="col-lg-6 text-center">
                 <img id="cover-art" src="" alt="Album Cover">
                 <div class="mb-4">
                     <div class="section-label" id="live-from">LIVE</div>
@@ -70,7 +70,7 @@
                     </div>
                 </button>
                 <div>
-                    <label for="loudness"><i class="bi bi-volume-up" id="mute"></i></label><input type="range" name="loudness" id="loudness" value="25">
+                    <label for="loudness" id="loudness-icon"><i class="bi bi-volume-up" id="mute"></i></label><input type="range" name="loudness" id="loudness" value="25">
                 </div>
             </div>
 
@@ -82,21 +82,14 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="container-fluid mt-5 px-0">
-    <div class="timetable-wrapper">
-        <div class="d-flex flex-nowrap gap-4 pb-4" id="timetable">
-        </div>
+    <div id="footer" class="glass-wrapper text-center">
+        <p class="mb-0" id="powered-by">STATION is powered by:</p>
+        <a href="https://laut.fm/" target="_blank">
+            <img src="assets/img/lautfm.svg" alt="laut.fm">
+        </a>
     </div>
 </div>
-
-<footer>
-    <p class="mb-0" id="powered-by">STATION is powered by:</p>
-    <a href="https://laut.fm/" target="_blank">
-        <img src="assets/img/lautfm.svg" alt="laut.fm">
-    </a>
-</footer>
 
 <audio id="stream"></audio>
 </body>
