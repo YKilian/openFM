@@ -67,8 +67,12 @@ async function updateData() {
         ]);
 
         const station = await stationRes.json();
+
+        console.log(station);
         const current = await currentSongRes.json();
+        console.log(current);
         const history = await historyRes.json();
+        console.log(history);
         let playlist = null;
         if (playlistRes.ok) {
             try {
@@ -77,6 +81,7 @@ async function updateData() {
                 playlist = null;
             }
         }
+        console.log(playlist);
 
         stationLogo = station.images.station_640x640 || station.images.station_120x120;
         color = station.color || '#169da8'
@@ -184,8 +189,10 @@ async function updateData() {
                 playlists.forEach(playlist => {
                     playlist.airtimes.forEach(airtime => {
                         if (airtime.day === day) {
+                            if (airtime.end_time === null) airtime.end_time = 0;
                             shows.push({
                                 name: playlist.name,
+                                description: playlist.description,
                                 id: playlist.id,
                                 start: airtime.hour,
                                 end: airtime.end_time
